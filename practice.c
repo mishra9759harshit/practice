@@ -9,3 +9,6 @@ void helo(){
 void word(){
   printf("world");
 }
+void what(){
+  printf("what");
+}
