@@ -6,3 +6,6 @@ void greet(){
 void helo(){
   printf("Hello");
 }
+void word(){
+  printf("world");
+}
