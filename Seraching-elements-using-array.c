@@ -6,9 +6,9 @@ printf("how many numbers you want to enten\n");
 scanf("%d", &n);
 printf("Enter the elements of Array\n");
 for(i = 0; i < n; i++){
-scanf("%d", &array[i]0);
+scanf("%d", &array[i]);
 }
-printrf("Eneter The number you Want to Search:\n");
+printf("Eneter The number you Want to Search:\n");
 scanf("%d", &item);
 
 // Algorithm 
