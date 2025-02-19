@@ -1,36 +1,41 @@
-#include<stdio.h>
+#include <stdio.h>
 
-int main(){
-  int n;
-  printf("Enter the size of array you want to test\n");
-  scanf("%d", &n);
- int array[];
- printf("Enter the elements you want to test");
- for(int i = 0; i < n; i++){
-  scanf("%d", & array[i]);
- }
+int main() {
+    int n;
+    printf("Enter the size of the array: ");
+    scanf("%d", &n);
 
- int target;
- printf("Enter Number to search\n");
+    int array[n]; // Corrected array declaration
 
-// algorithm
+    printf("Enter the elements: ");
+    for (int i = 0; i < n; i++) {
+        scanf("%d", &array[i]);
+    }
 
-while(left <= right){
-mid = (left + right) / 2; //Find the midle Index
+    int target;
+    printf("Enter the number to search: ");
+    scanf("%d", &target);
 
-if(array[mid] == target){
-printf("Number %d found at index %d\n", target, mid);
-int found = 1;
-break;
-}else if(array[mid] < target){ // search right half
-left = mid + 1;
-}else{
-//search left half
-right = mid - 1;
-}
-}
-if (!found){
-printf("Number Not found in the Array.\n");
-}
-return 0;
+    // Binary Search Algorithm
+    int left = 0, right = n - 1, mid, found = 0;
+
+    while (left <= right) {
+        mid = (left + right) / 2; // Find the middle index
+
+        if (array[mid] == target) { // If found
+            printf("Number %d found at index %d\n", target, mid);
+            found = 1;
+            break;
+        } else if (array[mid] < target) { // Search right half
+            left = mid + 1;
+        } else { // Search left half
+            right = mid - 1;
+        }
+    }
+
+    if (!found) {
+        printf("Number not found in the array.\n");
+    }
+
+    return 0;
 }
